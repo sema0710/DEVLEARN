@@ -3,6 +3,7 @@ import { color, pxToRem } from '../../../style';
 
 export const SignIn = styled.div`
 	width: 100%;
+	min-width: ${pxToRem(900)}rem;
 	min-height: 100vh;
 	background-color: ${color.main};
 	display: flex;
@@ -22,18 +23,27 @@ export const SignInTitle = styled.div`
 	font-size: ${pxToRem(60)}rem;
 	color: ${color.font};
 	font-weight: 100;
-	margin-bottom: ${pxToRem(110)}rem;
+	margin-bottom: ${pxToRem(60)}rem;
 	text-align: center;
+`;
+
+export const SignInTextButton = styled.button`
+	color: white;
+	border: none;
+	font-size: 1rem;
+	background-color: ${color.sub};
+	font-weight: 100;
+	margin-top: 10px;
 `;
 
 export const InputStyle = {
 	width: '100%',
 	height: '50px',
-	margin: '0px 0px 50px 0px',
+	margin: '50px 0px 0px 0px',
 };
 
 export const ButtonStyle = {
 	width: '100%',
 	height: '50px',
-	margin: '30px 0px 0px 0px',
+	margin: '50px 0px 0px 0px',
 };
