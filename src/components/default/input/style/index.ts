@@ -1,10 +1,22 @@
 import styled from 'styled-components';
-import { color, pxToRem } from '../../../../style';
+import { color } from '../../../../style';
 
-export const Input = styled.input<{ width: number; height: number }>`
-	width: ${props => pxToRem(props.width)};
-	height: ${props => pxToRem(props.height)};
-	border: 0px 0px 1px 0px white;
+export const Input = styled.input<{
+	width: string;
+	height: string;
+	margin?: string;
+	fontSize?: string;
+}>`
+	width: ${props => props.width};
+	height: ${props => props.height};
+	border: 0px;
+	border-bottom: 1px solid white;
+	outline: none;
+	font-size: ${({ fontSize }) => (fontSize ? fontSize : '1.5rem')};
 	background-color: ${color.sub};
 	color: ${color.font};
+	margin: ${props => props.margin};
+	&::placeholder {
+		color: white;
+	}
 `;
