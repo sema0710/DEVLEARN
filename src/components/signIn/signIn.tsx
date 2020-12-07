@@ -1,4 +1,4 @@
-import { Input, Button } from 'components/default';
+import { Input, Button, Title } from 'components/default';
 import React, { FC } from 'react';
 import * as S from './style';
 import TextButton from './textButton/textButton';
@@ -13,7 +13,7 @@ const SignIn: FC = () => {
 	return (
 		<S.SignIn>
 			<S.SignInBody>
-				<S.SignInTitle>LOGIN</S.SignInTitle>
+				<Title>LOGIN</Title>
 				<Input {...S.InputStyle} setValue={setValue} placeholder={ID_PLACE_HOLDER} />
 				<Input
 					{...S.InputStyle}
