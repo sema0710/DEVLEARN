@@ -16,4 +16,5 @@ export const Button = styled.button<{
 	font-weight: 100;
 	font-size: ${({ fontSize }) => (fontSize ? fontSize : '20px')};
 	margin: ${props => props.margin};
+	outline: none;
 `;
