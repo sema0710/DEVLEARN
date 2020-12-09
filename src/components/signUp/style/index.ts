@@ -21,6 +21,7 @@ export const SignUpScrollWrapper = styled.div`
 	width: ${pxToRem(900)}rem;
 	height: ${pxToRem(660)}rem;
 	overflow-x: hidden;
+	scroll-behavior: smooth;
 `;
 
 export const SignUpBody = styled.div`
@@ -50,22 +51,35 @@ export const SignUpUserImg = styled.div<{ image?: string }>`
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-size: contain;
-	${({ image }) =>
-		image
-			? css`
-					background-image: ${image};
-			  `
-			: css`
-					background-color: white;
-			  `}
+	background-color: white;
+	background-image: url(${props => props.image});
 `;
 
 export const SignUpUserImgInput = styled.input`
 	display: none;
 `;
 
+export const ButtonWrapper = styled.div`
+	width: 100%;
+	margin-top: 30px;
+	> button {
+		width: 46%;
+		margin: 2%;
+	}
+`;
+
 export const ButtonStyle = {
 	width: '100%',
 	height: '50px',
 	margin: '100px 0px 0px 0px',
+};
+
+export const InputStyle = {
+	width: '100%',
+	height: '50px',
+	margin: '30px 0px 0px 0px',
+};
+
+export const SignUpTitleStyle = {
+	margin: '0px 0px 0px 0px',
 };
