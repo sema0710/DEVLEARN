@@ -6,11 +6,12 @@ interface Props {
 	height: string;
 	fontSize?: string;
 	margin?: string;
+	onClick?: (event?: React.MouseEvent<HTMLButtonElement, MouseEvent>) => void;
 }
 
-const Button: FC<Props> = ({ width, height, children, margin, fontSize }) => {
+const Button: FC<Props> = ({ width, height, children, margin, fontSize, onClick }) => {
 	return (
-		<S.Button width={width} height={height} margin={margin} fontSize={fontSize}>
+		<S.Button width={width} height={height} margin={margin} fontSize={fontSize} onClick={onClick}>
 			{children}
 		</S.Button>
 	);
