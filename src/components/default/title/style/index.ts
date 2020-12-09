@@ -1,7 +1,7 @@
 import { color, pxToRem } from 'src/style';
 import styled from 'styled-components';
 
-export const Title = styled.div<{ margin: string }>`
+export const Title = styled.div<{ margin?: string }>`
 	font-size: ${pxToRem(60)}rem;
 	color: ${color.font};
 	font-weight: 100;
