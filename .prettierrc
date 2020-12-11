@@ -6,7 +6,7 @@
 	"trailingComma": "all",
 	"bracketSpacing": true,
 	"semi": true,
-	"useTabs": true,
+	"useTabs": false,
 	"arrowParens": "avoid",
 	"endOfLine": "lf",
 	"editor.formatOnSave": true
