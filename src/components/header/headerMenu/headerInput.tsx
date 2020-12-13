@@ -6,6 +6,7 @@ const HeaderInput: FC = () => {
     <S.HeaderSearchInputWrapper>
       <S.HeaderSearchInput />
       <div />
+      <S.HeaderSearchButton />
     </S.HeaderSearchInputWrapper>
   );
 };
