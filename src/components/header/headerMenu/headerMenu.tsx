@@ -6,6 +6,7 @@ const HeaderMenu: FC = () => {
   return (
     <S.HeaderMenuWrapper>
       <HeaderInput />
+      <S.HeaderMypageButton />
     </S.HeaderMenuWrapper>
   );
 };
