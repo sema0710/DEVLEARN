@@ -1,5 +1,6 @@
 import { color, pxToRem } from 'src/style';
 import styled from 'styled-components';
+import { searchImg, searchHoverImg } from '../../../assets/header';
 
 export const Header = styled.div`
   width: 100%;
@@ -22,21 +23,27 @@ export const HeaderMenuWrapper = styled.div`
   display: flex;
 `;
 
-export const HeaderMypageButton = styled.button`
-  width: ${pxToRem(60)}rem;
-  height: ${pxToRem(60)}rem;
+export const HeaderMypageButton = styled.button<{ image?: string }>`
+  width: ${pxToRem(40)}rem;
+  height: ${pxToRem(40)}rem;
   border-radius: ${pxToRem(30)}rem;
+  background-image: url(${props => props.image});
+  border: none;
+  margin-left: ${pxToRem(10)}rem;
+  outline: none;
 `;
 
 export const HeaderSearchInputWrapper = styled.div`
   position: relative;
   display: flex;
   justify-content: center;
+  position: relative;
+  margin-right: 10px;
   > div {
     width: 1px;
     height: 0px;
     background-color: white;
-    transition: width 0.5s;
+    transition: width 0.3s;
     position: absolute;
     bottom: 0;
     height: 1px;
@@ -46,6 +53,12 @@ export const HeaderSearchInputWrapper = styled.div`
   }
   > input:not(:focus) + div {
     width: 0px;
+  }
+  > input:focus ~ button {
+    background-image: url(${searchHoverImg});
+  }
+  > input:not(:focus) ~ button {
+    background-image: url(${searchImg});
   }
 `;
 
@@ -58,4 +71,17 @@ export const HeaderSearchInput = styled.input`
   outline: none;
   color: white;
   font-size: 20px;
+`;
+
+export const HeaderSearchButton = styled.button`
+  width: 25px;
+  height: 25px;
+  background-color: ${color.header};
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translate(0px, -50%);
+  border: none;
+  background-image: url(${searchImg});
+  transition: 0.3s;
 `;
