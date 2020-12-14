@@ -1,7 +1,7 @@
-import { Input, Button, Title } from 'components/default';
+import { Input, Button, Title } from 'src/framwork/components/default';
 import React, { FC } from 'react';
 import * as S from './style';
-import TextButton from './textButton/textButton';
+import TextButton from './TextButton/TextButton';
 
 const ID_PLACE_HOLDER = '아이디';
 const PASSWORD_PLACE_HOLDER = '비밀번호';
