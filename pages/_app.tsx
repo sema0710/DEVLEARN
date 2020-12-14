@@ -3,6 +3,7 @@ import App from 'next/app';
 import { Provider } from 'react-redux';
 import store from '../src/framwork/module/redux/store';
 import GlobalStyle from '../src/style/GlobalStyle';
+import UseHeader from '../src/framwork/util/header';
 
 export default class RootApp extends App {
   render() {
@@ -11,7 +12,9 @@ export default class RootApp extends App {
       <>
         <GlobalStyle />
         <Provider store={store}>
-          <Component {...other}></Component>
+          <UseHeader>
+            <Component {...other} />
+          </UseHeader>
         </Provider>
       </>
     );
