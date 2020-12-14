@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import * as S from './style';
-import { HeaderTitle, HeaderMenu } from './headerMenu';
+import { HeaderTitle, HeaderMenu } from './HeaderMenu';
 
 const Header: FC = () => {
   return (
