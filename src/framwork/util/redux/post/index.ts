@@ -1,2 +1,2 @@
-import { usePost } from './Post';
+import { usePost } from './usePost';
 export { usePost };
