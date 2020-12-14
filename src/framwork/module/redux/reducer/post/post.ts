@@ -8,16 +8,7 @@ const initState: IPostState = {
       '테스트 글',
       'hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, ,hello world',
       ['#테스트'],
-    ),
-    new PostEntity(
-      '테스트 글',
-      'hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, ,hello world',
-      ['#테스트'],
-    ),
-    new PostEntity(
-      '테스트 글',
-      'hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, hello world, ,hello world',
-      ['#테스트'],
+      false,
     ),
   ],
 };
