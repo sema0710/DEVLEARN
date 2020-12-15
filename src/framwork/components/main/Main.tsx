@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import MainPost from './post/MainPost';
 import * as S from './style';
 import IPostEntity from '../../../domain/entity/post';
+import PostList from '../post/PostList';
 
 interface Props {
   postList: IPostEntity[];
@@ -10,7 +10,7 @@ interface Props {
 const Main: FC<Props> = ({ postList }) => {
   return (
     <S.Main>
-      <MainPost postList={postList} />
+      <PostList postList={postList} />
     </S.Main>
   );
 };
