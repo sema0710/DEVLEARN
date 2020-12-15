@@ -19,6 +19,7 @@ export const PostElementTitle = styled.p`
   box-sizing: border-box;
   border-spacing: 0px;
   cursor: pointer;
+  line-height: 0.9;
   &:hover {
     border-bottom: 1px solid white;
     box-sizing: border-box;
@@ -87,4 +88,8 @@ export const PostElementCheckIcon = styled.div<{ isResolved: boolean }>`
   &:hover > div {
     ${props => (props.isResolved ? failIcon : successIcon)};
   }
+`;
+
+export const MainPostWrapper = styled.div`
+  width: ${pxToRem(1000)}rem;
 `;
