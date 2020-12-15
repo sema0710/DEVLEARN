@@ -11,6 +11,9 @@ export const Header = styled.div`
   align-items: center;
   padding: 0px 30px;
   box-sizing: border-box;
+  position: fixed;
+  top: 0;
+  z-index: 100;
 `;
 
 export const HeaderTitle = styled.div`
