@@ -1,2 +1,2 @@
-import { IPostReducer, IPostState, PostList } from './post';
-export type { IPostReducer, IPostState, PostList };
+import { IPostReducer, IPostState } from './IPostReducer';
+export type { IPostReducer, IPostState };
