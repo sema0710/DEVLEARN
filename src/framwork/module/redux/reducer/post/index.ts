@@ -1,2 +1,2 @@
-import PostReducer from './post';
+import PostReducer from './PostReducer';
 export default PostReducer;
