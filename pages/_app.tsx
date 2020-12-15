@@ -3,20 +3,20 @@ import App from 'next/app';
 import { Provider } from 'react-redux';
 import store from '../src/framwork/module/redux/store';
 import GlobalStyle from '../src/style/GlobalStyle';
-import { useHeader, useBackground } from '../src/framwork/util/style';
+import Header from '../src/framwork/components/header';
+import Background from '../src/framwork/components/default/background';
 
 export default class RootApp extends App {
   render() {
     const { Component, ...other } = this.props;
-    return useBackground(
-      useHeader(
-        <>
-          <GlobalStyle />
-          <Provider store={store}>
-            <Component {...other} />
-          </Provider>
-        </>,
-      ),
+    return (
+      <Background>
+        <Header />
+        <GlobalStyle />
+        <Provider store={store}>
+          <Component {...other} />
+        </Provider>
+      </Background>
     );
   }
 }
