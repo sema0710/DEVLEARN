@@ -10,10 +10,11 @@ export const WritePost = styled.div`
 
 export const WritePostBody = styled.div`
   width: ${pxToRem(1100)}rem;
-  height: ${pxToRem(915)}rem;
+  min-height: ${pxToRem(855)}rem;
   background-color: ${color.sub};
   padding: ${pxToRem(30)}rem;
   box-sizing: border-box;
+  margin: ${pxToRem(30)}rem;
 `;
 
 export const WritePostTitle = styled.input`
@@ -34,24 +35,29 @@ export const WritePostTitle = styled.input`
 
 export const WritePostTagWrapper = styled.div`
   width: 100%;
-  height: ${pxToRem(30)}rem;
+  min-height: ${pxToRem(30)}rem;
   background-color: ${color.sub};
   padding: 0px ${pxToRem(20)}rem;
   box-sizing: border-box;
+  margin: ${pxToRem(15)}rem;
+  display: flex;
+  flex-wrap: wrap;
 `;
 
-export const WritePostTag = styled.div`
+export const WritePostTag = styled.div<{ cursored: boolean }>`
   height: ${pxToRem(25)}rem;
-  border-radius: ${pxToRem(30)}rem;
-  background-color: ${color.main};
+  display: inline-block;
+  padding: 3px 10px;
+  margin: 0px 3px;
+  border-radius: ${pxToRem(10)}rem;
+  background-color: ${props => (props.cursored ? color.fail : color.main)};
   font-size: ${pxToRem(20)}rem;
   color: white;
 `;
 
 export const WritePostTagInput = styled.input`
-  width: auto;
+  width: 100%;
   display: block;
-  height: 100%;
   border: none;
   outline: none;
   background-color: ${color.sub};
