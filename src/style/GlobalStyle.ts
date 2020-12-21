@@ -1,5 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
-import { color } from '.';
+import { color, pxToRem } from '.';
 
 const GlobalStyle = createGlobalStyle`
     * {
@@ -12,10 +12,10 @@ const GlobalStyle = createGlobalStyle`
     }
     .ce-block__content {
         color: white;
-        max-width: 90%;
+        max-width: 93%;
     }
     .ce-toolbar__content {
-        max-width: 90%;
+        max-width: 93%;
         padding: 0px 10px;
         box-sizing: border-box;
         > div {
@@ -30,6 +30,19 @@ const GlobalStyle = createGlobalStyle`
     }
     .cdx-quote [contentEditable=true][data-placeholder]::before {
         color: white !important;
+    }
+    .ce-paragraph[data-placeholder]:empty::before {
+        color: white !important;
+        font-weight: 100 !important;
+    }
+    .cdx-block, .cdx-list__item {
+        font-size: ${pxToRem(20)}rem !important;
+    }
+    .ce-code__textarea {
+        font-size: ${pxToRem(15)}rem !important;
+    }
+    .codex-editor__redactor {
+        padding-bottom: 0px !important;
     }
 `;
 
