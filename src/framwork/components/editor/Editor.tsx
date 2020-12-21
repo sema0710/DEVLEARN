@@ -1,11 +1,11 @@
 /* eslint-disable @typescript-eslint/no-var-requires */
 /* eslint-disable @typescript-eslint/ban-types */
 import React from 'react';
+import * as S from './style';
 
 interface Props {
   data: Object;
   save: (value: Object) => void;
-  onChane: (value: string) => void;
 }
 
 class Editor extends React.Component<Props> {
@@ -41,6 +41,11 @@ class Editor extends React.Component<Props> {
       holder: 'editorjs',
       logLevel: 'ERROR',
       tools: {
+        paragraph: {
+          config: {
+            placeholder: '질문을 작성하세요.',
+          },
+        },
         header: Header,
         embed: {
           class: Embed,
@@ -55,25 +60,27 @@ class Editor extends React.Component<Props> {
         inlineCode: InlineCode,
         code: Code,
         table: Table,
-        quote: Quote,
-        marker: Marker,
         checkList: Checklist,
-        delimiter: Delimiter,
       },
 
       data: content,
     });
   };
   async onSave(e) {
+    console.log(this.editor);
     const data = await this.editor.saver.save();
-
     this.props.save(data);
   }
 
   render() {
     return (
       <div>
-        <div id={'editorjs'}></div>
+        <S.EditorWrapper>
+          <div id={'editorjs'}></div>
+        </S.EditorWrapper>
+        <S.EditorSaveButtonWrapper>
+          <S.EditorSaveButton onClick={this.onSave.bind(this)}>질문하기</S.EditorSaveButton>
+        </S.EditorSaveButtonWrapper>
       </div>
     );
   }
