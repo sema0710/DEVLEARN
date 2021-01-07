@@ -13,6 +13,7 @@ export const EditorSaveButton = styled.button`
   border-radius: 3px;
   position: fixed;
   bottom: ${pxToRem(40)}rem;
+  cursor: pointer;
 `;
 
 export const EditorSaveButtonWrapper = styled.div`
@@ -21,4 +22,6 @@ export const EditorSaveButtonWrapper = styled.div`
   justify-content: flex-end;
 `;
 
-export const EditorWrapper = styled.div``;
+export const EditorWrapper = styled.div`
+  min-height: ${pxToRem(150)}rem;
+`;
