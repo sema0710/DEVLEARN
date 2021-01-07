@@ -8,6 +8,8 @@ import {
   SET_POSTS,
   GET_MY_POSTS,
   SET_MY_POSTS,
+  GET_DETAIL_POST,
+  IGetDetailPost,
 } from './IPostAction';
-export type { IGetPosts, IPostAction, ISetMyPost, IGetMyPosts, ISetPost };
-export { GET_POSTS, SET_POSTS, GET_MY_POSTS, SET_MY_POSTS };
+export type { IGetPosts, IPostAction, ISetMyPost, IGetMyPosts, ISetPost, IGetDetailPost };
+export { GET_POSTS, SET_POSTS, GET_MY_POSTS, SET_MY_POSTS, GET_DETAIL_POST };
