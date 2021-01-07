@@ -10,6 +10,7 @@ export const WritePost = styled.div`
 
 export const WritePostBody = styled.div`
   width: ${pxToRem(1100)}rem;
+  min-width: ${pxToRem(400)}rem;
   min-height: ${pxToRem(855)}rem;
   background-color: ${color.sub};
   padding: ${pxToRem(30)}rem;
@@ -34,12 +35,13 @@ export const WritePostTitle = styled.input`
 `;
 
 export const WritePostTagWrapper = styled.div`
-  width: 100%;
+  width: 93%;
+  min-width: ${pxToRem(300)}rem;
   min-height: ${pxToRem(30)}rem;
   background-color: ${color.sub};
-  padding: 0px ${pxToRem(20)}rem;
+  padding: 0px 3.5% 0px 3.5%;
   box-sizing: border-box;
-  margin: ${pxToRem(15)}rem;
+  margin: ${pxToRem(15)}rem 0px;
   display: flex;
   flex-wrap: wrap;
 `;
@@ -56,7 +58,6 @@ export const WritePostTag = styled.div<{ cursored: boolean }>`
 `;
 
 export const WritePostTagInput = styled.input`
-  width: 100%;
   display: block;
   border: none;
   outline: none;
