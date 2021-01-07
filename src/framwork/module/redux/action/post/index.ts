@@ -1,2 +1,1 @@
-import { getPosts } from './PostAction';
-export default getPosts;
+export * from './PostAction';

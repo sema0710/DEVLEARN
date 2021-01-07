@@ -8,6 +8,9 @@ import {
   SET_MY_POSTS,
   SET_POSTS,
   GET_MY_POSTS,
+  IPostAction,
+  GET_DETAIL_POST,
+  IGetDetailPost,
 } from './interface';
 
 export const getPosts = (): IGetPosts => ({
@@ -27,3 +30,10 @@ export const setMyPosts = (payload: IPostEntity[]): ISetMyPost => ({
   type: SET_MY_POSTS,
   payload,
 });
+
+export const getDetailPosts = (payload: string): IGetDetailPost => ({
+  type: GET_DETAIL_POST,
+  payload,
+});
+
+export type { IPostAction };
