@@ -1,7 +1,8 @@
 import React from 'react';
+import MainContainer from '../src/framwork/container/main';
 
-const Main = () => {
-	return <></>;
+const HeaderPage = () => {
+  return <MainContainer />;
 };
 
-export default Main;
+export default HeaderPage;
