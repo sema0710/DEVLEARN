@@ -44,32 +44,36 @@ export const PostElementDescription = styled.div`
 `;
 
 const successIcon = css`
-  width: ${pxToRem(35)}rem;
-  height: 1px;
-  background-color: ${color.success};
-  transform: ${`translate(${pxToRem(20)}rem, ${pxToRem(20)}rem) rotate(135deg)`};
-  &::after {
+  > div:first-child {
+    width: ${pxToRem(35)}rem;
+    height: 1px;
+    background-color: ${color.success};
+    transform: ${`translate(${pxToRem(10)}rem, ${pxToRem(21)}rem) rotate(135deg)`};
+  }
+  > div:last-child {
     content: '';
     width: ${pxToRem(20)}rem;
     display: inline-block;
     height: 1px;
     background-color: ${color.success};
-    transform: ${`translate(${pxToRem(25)}rem, ${pxToRem(-3)}rem) rotate(-90deg)`};
+    transform: ${`translate(${pxToRem(-2)}rem, ${pxToRem(12)}rem) rotate(50deg)`};
   }
 `;
 
 const failIcon = css`
-  width: ${pxToRem(40)}rem;
-  height: 1px;
-  background-color: ${color.fail};
-  transform: ${`translate(${pxToRem(0)}rem, ${pxToRem(20)}rem) rotate(45deg)`};
-  &::after {
+  > div:first-child {
+    width: ${pxToRem(40)}rem;
+    height: 1px;
+    background-color: ${color.fail};
+    transform: ${`translate(${pxToRem(0)}rem, ${pxToRem(20)}rem) rotate(45deg)`};
+  }
+  > div:last-child {
     width: ${pxToRem(40)}rem;
     content: '';
     display: inline-block;
     background-color: ${color.fail};
     height: 1px;
-    transform: ${`translate(0px, ${pxToRem(-13)}rem) rotate(90deg)`};
+    transform: ${`translate(${pxToRem(1)}rem, ${pxToRem(6)}rem) rotate(135deg)`};
   }
 `;
 
@@ -81,12 +85,14 @@ export const PostElementCheckIcon = styled.div<{ isResolved: boolean }>`
   transform: ${`translate(${pxToRem(20)}rem, 8px)`};
   > div {
     display: inline-block;
-    transition: all 0.3s;
     ${props => (props.isResolved ? successIcon : failIcon)};
     position: absolute;
   }
   &:hover > div {
     ${props => (props.isResolved ? failIcon : successIcon)};
+  }
+  > div > div {
+    transition: all 0.3s;
   }
 `;
 
