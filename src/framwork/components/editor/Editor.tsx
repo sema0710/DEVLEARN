@@ -6,6 +6,8 @@ import * as S from './style';
 interface Props {
   data: Object;
   save: (value: Object) => void;
+  autoSaveButtonAble?: boolean;
+  placeholder?: string;
 }
 
 class Editor extends React.Component<Props> {
@@ -23,13 +25,9 @@ class Editor extends React.Component<Props> {
     const EditorJS = require('@editorjs/editorjs');
     const Header = require('@editorjs/header');
     const Embed = require('@editorjs/embed');
-    const Delimiter = require('@editorjs/delimiter');
     const List = require('@editorjs/list');
     const InlineCode = require('@editorjs/inline-code');
-    const Table = require('@editorjs/table');
-    const Quote = require('@editorjs/quote');
     const Code = require('@editorjs/code');
-    const Marker = require('@editorjs/marker');
     const Checklist = require('@editorjs/checklist');
 
     let content = null;
@@ -43,7 +41,7 @@ class Editor extends React.Component<Props> {
       tools: {
         paragraph: {
           config: {
-            placeholder: '질문을 작성하세요.',
+            placeholder: this.props.placeholder ? this.props.placeholder : '질문을 작성하세요.',
           },
         },
         header: Header,
@@ -59,7 +57,6 @@ class Editor extends React.Component<Props> {
         list: List,
         inlineCode: InlineCode,
         code: Code,
-        table: Table,
         checkList: Checklist,
       },
 
@@ -67,7 +64,6 @@ class Editor extends React.Component<Props> {
     });
   };
   async onSave(e) {
-    console.log(this.editor);
     const data = await this.editor.saver.save();
     this.props.save(data);
   }
@@ -79,7 +75,11 @@ class Editor extends React.Component<Props> {
           <div id={'editorjs'}></div>
         </S.EditorWrapper>
         <S.EditorSaveButtonWrapper>
-          <S.EditorSaveButton onClick={this.onSave.bind(this)}>질문하기</S.EditorSaveButton>
+          {this.props.autoSaveButtonAble ? (
+            <S.EditorSaveButton onClick={this.onSave.bind(this)}>질문하기</S.EditorSaveButton>
+          ) : (
+            ''
+          )}
         </S.EditorSaveButtonWrapper>
       </div>
     );
