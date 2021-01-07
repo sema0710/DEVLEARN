@@ -20,6 +20,15 @@ export const HeaderTitle = styled.div`
   font-size: ${pxToRem(40)}rem;
   color: white;
   font-weight: 100;
+  > a {
+    text-decoration: none;
+  }
+  > a:link {
+    color: white;
+  }
+  > a:visited {
+    color: white;
+  }
 `;
 
 export const HeaderMenuWrapper = styled.div`
