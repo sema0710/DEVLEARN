@@ -14,7 +14,10 @@ const Post: FC<Props> = ({ title, description, tags, isResolved }) => {
     <S.PostElement>
       <S.PostElementTitle>{title}</S.PostElementTitle>
       <S.PostElementCheckIcon isResolved={isResolved}>
-        <div></div>
+        <div>
+          <div />
+          <div />
+        </div>
       </S.PostElementCheckIcon>
       <PostTags tags={tags} />
       <S.PostElementDescription>{description}</S.PostElementDescription>
