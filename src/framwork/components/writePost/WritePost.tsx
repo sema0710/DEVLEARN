@@ -9,7 +9,7 @@ const WritePost: FC = () => {
       <S.WritePostBody>
         <WritePostTitle />
         <WritePostTag tags={[]} />
-        <Editor />
+        <Editor save={sth => console.log(sth)} data={{}} autoSaveButtonAble={true} />
       </S.WritePostBody>
     </S.WritePost>
   );
