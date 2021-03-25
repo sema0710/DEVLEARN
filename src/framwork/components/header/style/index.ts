@@ -53,7 +53,6 @@ export const HeaderSearchInputWrapper = styled.div`
   margin-right: 10px;
   > div {
     width: 1px;
-    height: 0px;
     background-color: white;
     transition: width 0.3s;
     position: absolute;
