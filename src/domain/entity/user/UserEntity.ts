@@ -1,16 +1,11 @@
-import IUserEntity from './interface';
+import { useState } from 'react';
 
-class UserEntity implements IUserEntity {
-  userName: string;
-  img: string;
-  description: string;
-  id: number;
-  constructor(userName: string, img: string, description: string, id: number) {
-    this.userName = userName;
-    this.img = img;
-    this.description = description;
-    this.id = id;
-  }
-}
+const userEntity = () => {
+  const [user, setUser] = useState();
+  return {
+    user,
+    setUser,
+  };
+};
 
-export default UserEntity;
+export default userEntity;

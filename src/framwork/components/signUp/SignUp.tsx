@@ -1,9 +1,15 @@
-import React, { FC, useCallback, useEffect, useRef } from 'react';
+import React, { FC, useCallback, useRef, useState } from 'react';
 import * as S from './style';
 import ImgSettingPage from './ImgSettingPage';
 import SetInfoPage from './SetInfoPage';
+import { signup } from 'src/adapter/repository/user/UserRepository';
 
 const SignUp: FC = () => {
+  const [image, setImage] = useState<string>('');
+  const convertImageAndSetImage = (file: File) => {
+    const url = URL.createObjectURL(file);
+    setImage(url);
+  };
   const imgSettingPageRef = useRef<HTMLDivElement>();
   const setInfoPageRef = useRef<HTMLDivElement>();
   const moveImgSettingPage = useCallback(() => {
@@ -18,9 +24,6 @@ const SignUp: FC = () => {
   const currentButtonClickHandler = useCallback(() => {
     moveImgSettingPage();
   }, [moveImgSettingPage]);
-  const submitButtonClickHandler = useCallback(() => {
-    console.log('hihi');
-  }, []);
   return (
     <S.SignUp>
       <S.SignUpScrollWrapper>
@@ -28,14 +31,12 @@ const SignUp: FC = () => {
           <ImgSettingPage
             pageRef={imgSettingPageRef}
             buttonClickHandler={nextButtonClickHandler}
-            setImg={(file: File) => {
-              console.log(file);
-            }}
+            setImg={convertImageAndSetImage}
           />
           <SetInfoPage
             pageRef={setInfoPageRef}
             currentButtonClickHandler={currentButtonClickHandler}
-            buttonClickHandler={submitButtonClickHandler}
+            signin={signup}
           />
         </S.SignUpScrollBody>
       </S.SignUpScrollWrapper>

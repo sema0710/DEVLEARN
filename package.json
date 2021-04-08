@@ -14,7 +14,8 @@
   },
   "homepage": "https://github.com/sema0710/DEVLEARN#readme",
   "scripts": {
-    "start": "next",
+    "start": "NODE_ENV=local next",
+    "develop": "NODE_ENV=development next",
     "build": "webpack --mode production"
   },
   "dependencies": {
